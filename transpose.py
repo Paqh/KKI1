@@ -82,4 +82,38 @@ def decrypt_transpose(ciphertext, key):
    
     return plaintext
 
+# def decrypt_transpose(ciphertext, key):
+#     # Determine the number of rows and columns in the grid
+#     num_cols = len(ciphertext) // len(key)
+#     num_rows = len(key)
+
+#     # Check if there is an incomplete row at the bottom of the grid
+#     if len(ciphertext) % len(key) != 0:
+#         num_cols += 1
+
+#     # Create the grid
+#     grid = [[''] * num_cols for _ in range(num_rows)]
+
+#     # Populate the grid with the ciphertext
+#     index = 0
+#     for col in range(num_cols):
+#         for row in range(num_rows):
+#             if index < len(ciphertext):
+#                 grid[row][col] = ciphertext[index]
+#                 index += 1
+
+#     # Determine the order in which to read the columns based on the key
+#     column_order = [0] * num_cols
+#     for i in range(num_cols):
+#         column_order[i] = key.index(str(i % num_rows))
+
+#     # Read the plaintext from the grid
+#     plaintext = ''
+#     for row in range(num_rows):
+#         for col in range(num_cols):
+#             plaintext += grid[row][column_order[col]]
+
+#     return plaintext
+
+
 # print(decrypt_transpose(ciphertext, key))
